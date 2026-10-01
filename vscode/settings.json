@@ -1,0 +1,153 @@
+{
+  "editor.guides.bracketPairs": "active",
+    "editor.fontLigatures":  true,
+    "editor.fontFamily": "JetBrainsMono Nerd Font",
+    "terminal.integrated.fontFamily": "JetBrainsMono Nerd Font",
+    "vim.vimrc.enable": true,
+    "vim.vimrc.path": "~/.vimrc",
+
+    "files.readonlyInclude": {
+  "**/.cargo/registry/src/**/*.rs": true,
+  "**/.cargo/git/checkouts/**/*.rs": true,
+  "**/lib/rustlib/src/rust/library/**/*.rs": true,
+},
+   
+  // --- VSCodeVim ---
+  "vim.useSystemClipboard": true,              // y, p work with system clipboard
+  "vim.smartRelativeLine": true,               // Relative numbers except on current line
+  "vim.cursorStylePerMode.normal": "block",
+  "vim.cursorStylePerMode.insert": "line",
+  "vim.cursorStylePerMode.visual": "block-outline",
+  "vim.hlsearch": true,                        // Highlight search results
+  "vim.incsearch": true,                       // Incremental search like Vim
+  "vim.easymotion": true,                      // Enable EasyMotion plugin
+  "vim.sneak": true,                           // Enable sneak motions
+  "vim.handleKeys": {
+    "<C-c>": false,                            // Allow VS Code copy on Ctrl+C
+    "<C-v>": false                             // Allow VS Code paste on Ctrl+V
+  },
+
+  "vim.leader": " ",
+  "vim.normalModeKeyBindingsNonRecursive": [
+    { "before": ["<leader>", "t"], "commands": ["workbench.action.terminal.toggleTerminal"] },
+    { "before": ["<leader>", "s"], "commands": ["workbench.action.splitEditorRight"] },
+    { "before": ["<leader>", "r"], "commands": ["workbench.action.reloadWindow"] },
+    { "before": ["<leader>", "c"], "commands": ["editor.action.commentLine"] }
+  ],
+
+  // --- Editor polish ---
+  "editor.cursorSmoothCaretAnimation": "on",   // Smooth cursor moves
+  "editor.cursorBlinking": "solid", // Relative line numbers for motions
+  "editor.minimap.enabled": false,
+  "workbench.list.smoothScrolling": true,  // smooth for file tree, etc.
+  "editor.wordWrap": "off",
+
+
+   "better-comments.tags": [
+  {
+    "tag": "!",
+    "color": "#FF6B6B", // 🔴 Critical / errors
+    "strikethrough": false,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": true,
+    "italic": false,
+    "multiline": true
+  },
+  {
+    "tag": "?",
+    "color": "#4D96FF", // 🔵 Questions / doubts
+    "strikethrough": false,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": false,
+    "italic": true,
+    "multiline": true
+  },
+  {
+    "tag": "//",
+    "color": "#A0AEC0", // ⚪ Commented-out code (greyed)
+    "strikethrough": true,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": false,
+    "italic": true,
+    "multiline": true
+  },
+  {
+    "tag": "todo",
+    "color": "#FFD93D", // 🟡 Tasks / reminders
+    "strikethrough": false,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": true,
+    "italic": false,
+    "multiline": true
+  },
+  {
+    "tag": "note",
+    "color": "#FF9F1C", // 🟠 Special notes
+    "strikethrough": false,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": true,
+    "italic": false,
+    "multiline": true
+  },
+  {
+    "tag": "recheck",
+    "color": "#F6CEFC", // purple
+    "strikethrough": false,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": true,
+    "italic": true,
+    "multiline": true
+  },
+  {
+    "tag": "observe",
+    "color": "#6FB4C0", // teal
+    "strikethrough": false,
+    "underline": false,
+    "backgroundColor": "transparent",
+    "bold": true,
+    "italic": true,
+    "multiline": true
+  }
+],
+"editor.fontSize": 14,
+"workbench.editor.empty.hint": "hidden",
+// "C_Cpp.intelliSenseEngine": "disabled",
+"redhat.telemetry.enabled": false,
+"diffEditor.ignoreTrimWhitespace": false,
+"code-runner.runInTerminal": true,
+"code-runner.saveFileBeforeRun": true,
+
+    "code-runner.executorMap": {
+        "rust":"cargo run",
+        "javascript": "node",
+        "python": "python3 -u",
+        "perl": "perl",
+        "go": "go run",
+        "java": "cd $dir && javac $fileName && java $fileNameWithoutExt",
+        "c": "cd $dir && gcc-15 $fileName -o a.out && ./a.out",
+        "cpp": "cd $dir && g++-15 $fileName -std=gnu++17 -O2 -o a.out && ./a.out"
+    },
+    "terminal.integrated.fontLigatures.enabled": true,
+
+  "liveServer.settings.donotShowInfoMsg": true,
+  "liveServer.settings.CustomBrowser": "chrome",
+  "terminal.integrated.fontSize": 14,
+  "telemetry.telemetryLevel": "off",
+  "workbench.preferredDarkColorTheme": "GitHub Dark Dimmed",
+  "workbench.preferredLightColorTheme": "GitHub Light Default",
+  "workbench.colorTheme": "One Dark Pro Mix",
+  "makefile.configureOnOpen": true,
+  "editor.smoothScrolling": true,
+  "python.analysis.typeCheckingMode": "standard",
+  "workbench.iconTheme": "One Dark Modern Icons",
+  "workbench.editorAssociations": {
+    "*.{jpg,jpe,jpeg,png,bmp,gif,ico,webp,avif,svg}": "cweijan.imageViewer"
+  },
+  "network.meteredConnection": "off"
+}

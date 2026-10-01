@@ -1,0 +1,126 @@
+# Wikipedia title   | image URL or local path (blank = Wikipedia lead photo) | crop | elevation m
+#
+# elevation = override when Wikipedia's page is about something else (e.g. a town) or has no figure
+#
+# crop (optional, off by default) = GRAVITY:WIDTHxHEIGHT   gravity: north, center, northeast, northwest, south...
+#   e.g. north:70%x60%  keeps the top-centre 70% wide × 60% tall
+#
+# Commons search ideas for the classic view are in the comments on the right.
+
+# ════ Himalaya & Karakoram ════
+
+# ── Everest / Khumbu region ──────────────────────────────────────────
+Mount Everest          |  |  |      # "Everest from Kala Patthar"
+Lhotse                 |  |  |      # "Lhotse from Chukhung"
+Nuptse                 |  |  |      # "Nuptse from Dingboche"
+Makalu                 |  |  |      # "Makalu from Kongma La"
+Cho Oyu                |  |  |      # "Cho Oyu from Gokyo"
+Gyachung Kang          |  |  |      # "Gyachung Kang from Gokyo Ri"
+Pumori                 |  |  |      # "Pumori from Gorak Shep"
+Ama Dablam             |  |  |      # "Ama Dablam from Pangboche"
+Baruntse               |  |  |      # "Baruntse"
+Thamserku              |  |  |      # "Thamserku from Namche Bazaar"
+Kangtega               |  |  |      # "Kangtega from Tengboche"
+Island Peak            |  |  |      # "Imja Tse"
+Gauri Sankar           |  |  |      # "Gauri Shankar Rolwaling"
+
+# ── Central Nepal ────────────────────────────────────────────────────
+Annapurna              |  |  |      # "Annapurna South from Poon Hill"
+Hiunchuli              |  |  |      # "Hiunchuli from Annapurna Base Camp"
+Gangapurna             |  |  |      # "Gangapurna from Manang"
+Machapuchare           |  |  |      # "Machapuchare from Pokhara"
+Dhaulagiri             |  |  |      # "Dhaulagiri from Poon Hill"
+Manaslu                |  |  |      # "Manaslu from Samagaon"
+Himalchuli             |  |  |      # "Himalchuli"
+Langtang Lirung        |  |  |      # "Langtang Lirung from Kyanjin Gompa"
+Shishapangma           |  |  |      # "Shishapangma north face"
+
+# ── Sikkim, Bhutan & Eastern Himalaya ────────────────────────────────
+Kangchenjunga          |  |  |      # "Kangchenjunga from Goecha La" / "from Tiger Hill"
+Jannu                  |  |  |      # "Jannu north face"
+Kabru                  |  |  |      # "Kabru from Pelling"
+Pandim                 |  |  |      # "Pandim from Dzongri"
+Siniolchu              |  |  |      # "Siniolchu Zemu glacier"
+Jomolhari              |  |  |      # "Jomolhari from Jangothang"
+Gangkhar Puensum       |  |  |      # "Gangkhar Puensum"
+Namcha Barwa           |  |  |      # "Namcha Barwa Nyingchi"
+
+# ── Garhwal & Kumaon (Uttarakhand) ───────────────────────────────────
+Nanda Devi             |  |  |      # "Nanda Devi from Kausani"
+Nanda Kot              |  |  |      # "Nanda Kot from Munsiyari"
+Trisul                 |  |  |      # "Trisul from Bedni Bugyal"
+Kamet                  |  |  |      # "Kamet"
+Chaukhamba             |  |  |      # "Chaukhamba from Deoria Tal"
+Kedarnath              |  |  | 6940 # Wikipedia's page is the town — use a photo of the peak: "Kedarnath peak temple"
+Shivling (mountain)    |  |  |      # "Shivling from Tapovan"
+Meru Peak              |  |  |      # "Meru Peak from Tapovan"
+Bhagirathi Parbat      |  |  |      # "Bhagirathi peaks from Tapovan"
+Thalay Sagar           |  |  |      # "Thalay Sagar"
+Changabang             |  |  |      # "Changabang"
+Panchchuli             |  |  |      # "Panchachuli from Munsiyari"
+
+# ── Western Himalaya, Ladakh & Tibet ─────────────────────────────────
+Nanga Parbat           |  |  |      # "Nanga Parbat from Fairy Meadows"
+Nun Kun                |  |  |      # "Nun Kun Zanskar"
+Stok Kangri            |  |  |      # "Stok Kangri from Leh"
+Mount Kailash          |  |  |      # "Kailash north face"
+
+# ── Karakoram (bonus — not technically Himalaya) ─────────────────────
+K2                     |  |  |      # "K2 from Concordia"
+Broad Peak             |  |  |      # "Broad Peak from Concordia"
+Gasherbrum I           |  |  |      # "Gasherbrum I"
+Gasherbrum II          |  |  |      # "Gasherbrum II"
+Masherbrum             |  |  |      # "Masherbrum from Baltoro"
+Great Trango Tower     |  |  |      # "Trango Towers Baltoro"
+Laila Peak             |  |  |      # "Laila Peak Hushe"
+Rakaposhi              |  |  |      # "Rakaposhi from Karimabad"
+Saser Kangri           |  |  |      # "Saser Kangri"
+
+# ── East Asia & Oceania ──────────────────────────────────────────────
+Mount Fuji             |  |  |      # "Fuji from Lake Kawaguchi"
+Mayon                  |  |  |      # "Mayon Volcano Legazpi"
+Mount Kinabalu         |  |  |      # "Kinabalu from Kundasang"
+Aoraki / Mount Cook    |  |  |      # "Mount Cook from Hooker Valley"
+Mount Taranaki         |  |  |      # "Taranaki from Pouakai tarn"
+
+# ── Europe, Caucasus & Middle East ───────────────────────────────────
+Matterhorn             |  |  |      # "Matterhorn from Riffelsee"
+Eiger                  |  |  |      # "Eiger north face Kleine Scheidegg"
+Mont Blanc             |  |  |      # "Mont Blanc from Aiguille du Midi"
+Tre Cime di Lavaredo   |  |  |      # "Tre Cime north faces"
+Mount Vesuvius         |  |  |      # "Vesuvius from Naples"
+Kirkjufell             |  |  |      # "Kirkjufell waterfall"
+Stetind                |  |  |      # "Stetind Tysfjord"
+Mount Elbrus           |  |  |      # "Elbrus twin summits"
+Ushba                  |  |  |      # "Ushba from Mazeri"
+Mount Kazbek           |  |  |      # "Kazbek Gergeti Trinity Church"
+Mount Ararat           |  |  |      # "Ararat from Khor Virap"
+Mount Damavand         |  |  |      # "Damavand volcano"
+
+# ── Africa ───────────────────────────────────────────────────────────
+Mount Kilimanjaro      |  |  |      # "Kilimanjaro from Amboseli"
+Mount Kenya            |  |  |      # "Mount Kenya Batian Nelion"
+Table Mountain         |  |  |      # "Table Mountain from Bloubergstrand"
+
+# ── North America ────────────────────────────────────────────────────
+Denali                 |  |  |      # "Denali from Wonder Lake"
+Mount Rainier          |  |  |      # "Rainier from Reflection Lakes"
+Mount Hood             |  |  |      # "Mount Hood from Trillium Lake"
+Mount Shasta           |  |  |      # "Mount Shasta from Weed"
+Grand Teton            |  |  |      # "Teton Range Snake River Overlook"
+Half Dome              |  |  |      # "Half Dome from Glacier Point"
+Devils Tower           |  |  |      # "Devils Tower"
+Shiprock               |  |  |      # "Shiprock New Mexico"
+Mount Assiniboine      |  |  |      # "Assiniboine from Lake Magog"
+Mount Robson           |  |  |      # "Mount Robson from Berg Lake"
+Popocatépetl           |  |  |      # "Popocatepetl from Paso de Cortes"
+
+# ── South America ────────────────────────────────────────────────────
+Aconcagua              |  |  |      # "Aconcagua south face"
+Cotopaxi               |  |  |      # "Cotopaxi from Limpiopungo"
+Chimborazo             |  |  |      # "Chimborazo volcano"
+Monte Fitz Roy         |  |  |      # "Fitz Roy from Laguna de los Tres"
+Cerro Torre            |  |  |      # "Cerro Torre from Laguna Torre"
+Cuernos del Paine      |  |  |      # "Cuernos del Paine from Lake Pehoe"
+Alpamayo               |  |  |      # "Alpamayo southwest face"
+Mount Roraima          |  |  |      # "Mount Roraima tepui"
