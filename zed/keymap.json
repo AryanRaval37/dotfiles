@@ -1,0 +1,85 @@
+// Zed keymap, ported from ~/.vimrc and VS Code (VSCodeVim) settings.
+// Zed does not read .vimrc — mappings live here instead.
+// Docs: https://zed.dev/docs/vim  |  find action names via `dev: open key context view` / command palette
+[
+  // --- Insert mode: jj / jk to escape (inoremap jj/jk <Esc>) ---
+  {
+    "context": "vim_mode == insert",
+    "bindings": {
+      "j j": "vim::NormalBefore",
+      "j k": "vim::NormalBefore"
+    }
+  },
+
+  // --- Normal mode leader (space) mappings ---
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      // Save / quit
+      "space w": "workspace::Save",
+      "space q": "pane::CloseActiveItem",
+      "space x": ["action::Sequence", ["workspace::Save", "pane::CloseActiveItem"]],
+
+      // Buffers (Zed buffers == tabs in a pane)
+      "space b n": "pane::ActivateNextItem",
+      "space b p": "pane::ActivatePreviousItem",
+      "space b d": "pane::CloseActiveItem",
+
+      // "Tabs" (vim tabs don't exist in Zed; mapped to pane items)
+      "space t n": "workspace::NewFile",
+      "space t c": "pane::CloseActiveItem",
+      "space t o": "pane::CloseOtherItems",
+
+      // Files / search (:Files, :Rg)
+      "space f": "file_finder::Toggle",
+      "space r g": "pane::DeploySearch",
+
+      // Git (fugitive-style)
+      "space g s": "git_panel::ToggleFocus",
+      "space g c": "git::Commit",
+      "space g p": "git::Push",
+      "space g l": "git::Pull",
+
+      // Comments
+      "space /": "editor::ToggleComments",
+      "space c": "editor::ToggleComments",
+
+      // From VSCodeVim leader bindings
+      "space shift-t": "terminal_panel::Toggle",   // was <leader>t in VS Code; moved so it doesn't clash with <leader>tn/tc/to
+      "space s": "pane::SplitRight",
+
+      // Sneak (vim.sneak)
+      "s": "vim::PushSneak",
+      "shift-s": "vim::PushSneakBackward"
+    }
+  },
+
+  // --- Visual mode ---
+  {
+    "context": "vim_mode == visual && !menu",
+    "bindings": {
+      "space /": "editor::ToggleComments",
+      "space c": "editor::ToggleComments"
+    }
+  },
+
+  // --- Split navigation: Ctrl-h/j/k/l (normal mode; Ctrl-w h/j/k/l also works natively) ---
+  {
+    "context": "vim_mode == normal && !menu",
+    "bindings": {
+      "ctrl-h": "workspace::ActivatePaneLeft",
+      "ctrl-j": "workspace::ActivatePaneDown",
+      "ctrl-k": "workspace::ActivatePaneUp",
+      "ctrl-l": "workspace::ActivatePaneRight"
+    }
+  },
+
+  // --- Editor-wide ---
+  {
+    "context": "Editor",
+    "bindings": {
+      // code-runner replacement: save + run current file (see tasks.json)
+      "cmd-shift-r": ["action::Sequence", ["workspace::Save", ["task::Spawn", { "task_name": "Run current file" }]]]
+    }
+  }
+]

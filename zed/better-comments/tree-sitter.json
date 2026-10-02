@@ -1,0 +1,6 @@
+{
+  "grammars": [
+    { "name": "comment", "camelcase": "Comment", "scope": "source.comment", "path": ".", "file-types": [] }
+  ],
+  "metadata": { "version": "0.1.0", "license": "MIT", "description": "Whole-line comment grammar for better-comments style highlighting in Zed" }
+}

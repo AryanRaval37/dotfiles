@@ -1,8 +1,7 @@
 # dotfiles
 
-My current macos software development setup...
-Things that I might consider trying next
-
+My current macos software development setup...  
+Things that I might consider trying next:
 - Zed instead of vscode?
 - Zennotes instead of Obsidian just because of the native vim shortcuts
 - A proper claude code setup with appropriate skills, workflows, automations and whatnot

@@ -1,0 +1,110 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run `zed: open default settings` from the
+// command palette (cmd-shift-p / ctrl-shift-p)
+{
+
+  "vertical_scroll_margin": 8,
+  "scroll_sensitivity": 1.0,
+
+  "buffer_line_height": "comfortable",
+  "buffer_font_weight": 350.0,
+  "cli_default_open_behavior": "new_window",
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "default_profile": "ask",
+    "default_model": {
+      "provider": "zed.dev",
+      "model": "gpt-6-luna",
+      "enable_thinking": true,
+      "effort": "medium"
+    },
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "icon_theme": "Zed (Default)",
+  "vim_mode": true,
+  // Better-comments colours (from VS Code better-comments.tags), used by
+  // the better-comments extension (zed/better-comments). Applies to every theme.
+  "experimental.theme_overrides": {
+    "syntax": {
+      "comment.alert": {"color": "#FF6B6B", "font_weight": 700},
+      "comment.query": {"color": "#4D96FF", "font_style": "italic"},
+      "comment.strike": {"color": "#A0AEC0", "font_style": "italic"},
+      "comment.todo": {"color": "#FFD93D", "font_weight": 700},
+      "comment.note": {"color": "#FF9F1C", "font_weight": 700},
+      "comment.recheck": {"color": "#F6CEFC", "font_weight": 700, "font_style": "italic"},
+      "comment.observe": {"color": "#6FB4C0", "font_weight": 700, "font_style": "italic"}
+    }
+  },
+  "git": {
+    "inline_blame": { "enabled": false }  // hide last-commit info at end of cursor line
+  },
+  // --- Ported from VS Code / .vimrc ---
+  "relative_line_numbers": "enabled",       // vim.smartRelativeLine (current line stays absolute)
+  "tab_size": 4,                            // set tabstop/shiftwidth=4
+  "hard_tabs": false,                       // set expandtab
+  "use_smartcase_search": true,             // set ignorecase + smartcase for / search
+  "vim": {
+    "use_system_clipboard": "always",       // set clipboard=unnamedplus
+    "use_smartcase_find": true,             // smartcase for f/t
+    "toggle_relative_line_numbers": false,
+    "cursor_shape": {
+      "normal": "block",
+      "insert": "bar",
+      "visual": "hollow"
+    }
+  },
+  "terminal": {
+    "font_size": 14.0,
+    "font_family": "JetBrainsMono Nerd Font"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "base_keymap": "VSCode",
+  "minimap": {
+    "max_width_columns": 50,
+    "thumb_border": "none",
+    "thumb": "always",
+    "show": "auto"
+  },
+  "cursor_blink": false,
+  "buffer_font_family": "JetBrainsMono Nerd Font",
+  "read_only_files": [
+    "**/.cargo/registry/src/**/*.rs",
+    "**/.cargo/git/checkouts/**/*.rs",
+    "**/lib/rustlib/src/rust/library/**/*.rs",
+    "..."
+  ],
+  "soft_wrap": "none",
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    }
+  },
+  "ui_font_size": 16,
+  "buffer_font_size": 13.0,
+  "theme": {
+    "mode": "dark",
+    "light": "One Light",
+    "dark": "Ayu Mirage",
+  },
+}

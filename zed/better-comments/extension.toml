@@ -1,0 +1,11 @@
+id = "better-comments"
+name = "Better Comments"
+version = "0.1.0"
+schema_version = 1
+authors = ["AryanRaval37"]
+description = "Better-comments style whole-line highlighting (! ? // todo note recheck observe)"
+repository = "file:///path/to/zed-better-comments"
+
+[grammars.comment]
+repository = "file:///path/to/zed-better-comments"
+rev = "b00c6722a555972e0303b320229ec1fc58b0b12d"

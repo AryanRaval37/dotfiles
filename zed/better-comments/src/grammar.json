@@ -1,0 +1,671 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/grammar.schema.json",
+  "name": "comment",
+  "rules": {
+    "source": {
+      "type": "SEQ",
+      "members": [
+        {
+          "type": "CHOICE",
+          "members": [
+            {
+              "type": "CHOICE",
+              "members": [
+                {
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_first_strike"
+                  },
+                  "named": true,
+                  "value": "strike"
+                },
+                {
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_first_alert"
+                  },
+                  "named": true,
+                  "value": "alert"
+                },
+                {
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_first_query"
+                  },
+                  "named": true,
+                  "value": "query"
+                },
+                {
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_first_todo"
+                  },
+                  "named": true,
+                  "value": "todo"
+                },
+                {
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_first_note"
+                  },
+                  "named": true,
+                  "value": "note"
+                },
+                {
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_first_recheck"
+                  },
+                  "named": true,
+                  "value": "recheck"
+                },
+                {
+                  "type": "ALIAS",
+                  "content": {
+                    "type": "SYMBOL",
+                    "name": "_first_observe"
+                  },
+                  "named": true,
+                  "value": "observe"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "blank"
+                },
+                {
+                  "type": "SYMBOL",
+                  "name": "line"
+                }
+              ]
+            },
+            {
+              "type": "BLANK"
+            }
+          ]
+        },
+        {
+          "type": "REPEAT",
+          "content": {
+            "type": "CHOICE",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "strike"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "alert"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "query"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "todo"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "note"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "recheck"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "observe"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_nl_blank"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "_nl_line"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "strike_line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[ \\t]*\\/\\/[ \\t]*\\/\\/[^\\r\\n]*",
+        "flags": "i"
+      }
+    },
+    "_nl_strike_line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "\\r?\\n[ \\t]*\\/\\/[ \\t]*\\/\\/[^\\r\\n]*",
+        "flags": "i"
+      }
+    },
+    "_first_strike": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "strike_line"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_nl_line"
+              },
+              "named": true,
+              "value": "line"
+            }
+          }
+        ]
+      }
+    },
+    "strike": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_nl_strike_line"
+            },
+            "named": true,
+            "value": "strike_line"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_nl_line"
+              },
+              "named": true,
+              "value": "line"
+            }
+          }
+        ]
+      }
+    },
+    "alert_line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[ \\t]*(\\/\\/[ \\t]+|#[ \\t]*|\\/\\*+[ \\t]+|\\*[ \\t]*)?![^\\r\\n]*",
+        "flags": "i"
+      }
+    },
+    "_nl_alert_line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "\\r?\\n[ \\t]*(\\/\\/[ \\t]+|#[ \\t]*|\\/\\*+[ \\t]+|\\*[ \\t]*)?![^\\r\\n]*",
+        "flags": "i"
+      }
+    },
+    "_first_alert": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "alert_line"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_nl_line"
+              },
+              "named": true,
+              "value": "line"
+            }
+          }
+        ]
+      }
+    },
+    "alert": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_nl_alert_line"
+            },
+            "named": true,
+            "value": "alert_line"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_nl_line"
+              },
+              "named": true,
+              "value": "line"
+            }
+          }
+        ]
+      }
+    },
+    "query_line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[ \\t]*(\\/\\/|#|\\/\\*+|\\*)?[ \\t]*\\?[^\\r\\n]*",
+        "flags": "i"
+      }
+    },
+    "_nl_query_line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "\\r?\\n[ \\t]*(\\/\\/|#|\\/\\*+|\\*)?[ \\t]*\\?[^\\r\\n]*",
+        "flags": "i"
+      }
+    },
+    "_first_query": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "query_line"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_nl_line"
+              },
+              "named": true,
+              "value": "line"
+            }
+          }
+        ]
+      }
+    },
+    "query": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_nl_query_line"
+            },
+            "named": true,
+            "value": "query_line"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_nl_line"
+              },
+              "named": true,
+              "value": "line"
+            }
+          }
+        ]
+      }
+    },
+    "todo_line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[ \\t]*(\\/\\/|#|\\/\\*+|\\*)?[ \\t]*todo([^A-Za-z0-9_\\r\\n][^\\r\\n]*)?",
+        "flags": "i"
+      }
+    },
+    "_nl_todo_line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "\\r?\\n[ \\t]*(\\/\\/|#|\\/\\*+|\\*)?[ \\t]*todo([^A-Za-z0-9_\\r\\n][^\\r\\n]*)?",
+        "flags": "i"
+      }
+    },
+    "_first_todo": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "todo_line"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_nl_line"
+              },
+              "named": true,
+              "value": "line"
+            }
+          }
+        ]
+      }
+    },
+    "todo": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_nl_todo_line"
+            },
+            "named": true,
+            "value": "todo_line"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_nl_line"
+              },
+              "named": true,
+              "value": "line"
+            }
+          }
+        ]
+      }
+    },
+    "note_line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[ \\t]*(\\/\\/|#|\\/\\*+|\\*)?[ \\t]*note([^A-Za-z0-9_\\r\\n][^\\r\\n]*)?",
+        "flags": "i"
+      }
+    },
+    "_nl_note_line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "\\r?\\n[ \\t]*(\\/\\/|#|\\/\\*+|\\*)?[ \\t]*note([^A-Za-z0-9_\\r\\n][^\\r\\n]*)?",
+        "flags": "i"
+      }
+    },
+    "_first_note": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "note_line"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_nl_line"
+              },
+              "named": true,
+              "value": "line"
+            }
+          }
+        ]
+      }
+    },
+    "note": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_nl_note_line"
+            },
+            "named": true,
+            "value": "note_line"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_nl_line"
+              },
+              "named": true,
+              "value": "line"
+            }
+          }
+        ]
+      }
+    },
+    "recheck_line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[ \\t]*(\\/\\/|#|\\/\\*+|\\*)?[ \\t]*recheck([^A-Za-z0-9_\\r\\n][^\\r\\n]*)?",
+        "flags": "i"
+      }
+    },
+    "_nl_recheck_line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "\\r?\\n[ \\t]*(\\/\\/|#|\\/\\*+|\\*)?[ \\t]*recheck([^A-Za-z0-9_\\r\\n][^\\r\\n]*)?",
+        "flags": "i"
+      }
+    },
+    "_first_recheck": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "recheck_line"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_nl_line"
+              },
+              "named": true,
+              "value": "line"
+            }
+          }
+        ]
+      }
+    },
+    "recheck": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_nl_recheck_line"
+            },
+            "named": true,
+            "value": "recheck_line"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_nl_line"
+              },
+              "named": true,
+              "value": "line"
+            }
+          }
+        ]
+      }
+    },
+    "observe_line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[ \\t]*(\\/\\/|#|\\/\\*+|\\*)?[ \\t]*observe([^A-Za-z0-9_\\r\\n][^\\r\\n]*)?",
+        "flags": "i"
+      }
+    },
+    "_nl_observe_line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "\\r?\\n[ \\t]*(\\/\\/|#|\\/\\*+|\\*)?[ \\t]*observe([^A-Za-z0-9_\\r\\n][^\\r\\n]*)?",
+        "flags": "i"
+      }
+    },
+    "_first_observe": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "SYMBOL",
+            "name": "observe_line"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_nl_line"
+              },
+              "named": true,
+              "value": "line"
+            }
+          }
+        ]
+      }
+    },
+    "observe": {
+      "type": "PREC_RIGHT",
+      "value": 0,
+      "content": {
+        "type": "SEQ",
+        "members": [
+          {
+            "type": "ALIAS",
+            "content": {
+              "type": "SYMBOL",
+              "name": "_nl_observe_line"
+            },
+            "named": true,
+            "value": "observe_line"
+          },
+          {
+            "type": "REPEAT",
+            "content": {
+              "type": "ALIAS",
+              "content": {
+                "type": "SYMBOL",
+                "name": "_nl_line"
+              },
+              "named": true,
+              "value": "line"
+            }
+          }
+        ]
+      }
+    },
+    "blank": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[ \\t]*(\\*+\\/?|\\/\\/|#)[ \\t]*|[ \\t]+"
+      }
+    },
+    "line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "[^\\r\\n]+"
+      }
+    },
+    "_nl_blank": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "\\r?\\n[ \\t]*(\\*+\\/?|\\/\\/|#)?[ \\t]*"
+      }
+    },
+    "_nl_line": {
+      "type": "TOKEN",
+      "content": {
+        "type": "PATTERN",
+        "value": "\\r?\\n[^\\r\\n]*"
+      }
+    }
+  },
+  "extras": [],
+  "conflicts": [],
+  "precedences": [],
+  "externals": [],
+  "inline": [],
+  "supertypes": [],
+  "reserved": {}
+}

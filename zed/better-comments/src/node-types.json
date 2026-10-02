@@ -1,0 +1,219 @@
+[
+  {
+    "type": "alert",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "alert_line",
+          "named": true
+        },
+        {
+          "type": "line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "note",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "line",
+          "named": true
+        },
+        {
+          "type": "note_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "observe",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "line",
+          "named": true
+        },
+        {
+          "type": "observe_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "query",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "line",
+          "named": true
+        },
+        {
+          "type": "query_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "recheck",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "line",
+          "named": true
+        },
+        {
+          "type": "recheck_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "source",
+    "named": true,
+    "root": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": false,
+      "types": [
+        {
+          "type": "alert",
+          "named": true
+        },
+        {
+          "type": "blank",
+          "named": true
+        },
+        {
+          "type": "line",
+          "named": true
+        },
+        {
+          "type": "note",
+          "named": true
+        },
+        {
+          "type": "observe",
+          "named": true
+        },
+        {
+          "type": "query",
+          "named": true
+        },
+        {
+          "type": "recheck",
+          "named": true
+        },
+        {
+          "type": "strike",
+          "named": true
+        },
+        {
+          "type": "todo",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "strike",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "line",
+          "named": true
+        },
+        {
+          "type": "strike_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "todo",
+    "named": true,
+    "fields": {},
+    "children": {
+      "multiple": true,
+      "required": true,
+      "types": [
+        {
+          "type": "line",
+          "named": true
+        },
+        {
+          "type": "todo_line",
+          "named": true
+        }
+      ]
+    }
+  },
+  {
+    "type": "alert_line",
+    "named": true
+  },
+  {
+    "type": "blank",
+    "named": true
+  },
+  {
+    "type": "line",
+    "named": true
+  },
+  {
+    "type": "note_line",
+    "named": true
+  },
+  {
+    "type": "observe_line",
+    "named": true
+  },
+  {
+    "type": "query_line",
+    "named": true
+  },
+  {
+    "type": "recheck_line",
+    "named": true
+  },
+  {
+    "type": "strike_line",
+    "named": true
+  },
+  {
+    "type": "todo_line",
+    "named": true
+  }
+]

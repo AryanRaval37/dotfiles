@@ -1,0 +1,3 @@
+grammars/
+*.wasm
+node_modules/

@@ -1,0 +1,11 @@
+// Global Zed tasks. Replaces VS Code's code-runner executorMap.
+// Run with cmd-shift-r (see keymap.json) or `task: spawn` from the command palette.
+[
+  {
+    "label": "Run current file",
+    "command": "f=\"$ZED_FILE\"; cd \"$(dirname \"$f\")\"; n=$(basename \"$f\"); s=${n%.*}; case \"$n\" in *.rs) cargo run ;; *.py) python3 -u \"$n\" ;; *.js) node \"$n\" ;; *.go) go run \"$n\" ;; *.pl) perl \"$n\" ;; *.java) javac \"$n\" && java \"$s\" ;; *.c) gcc-15 \"$n\" -o a.out && ./a.out ;; *.cpp|*.cc) g++-15 \"$n\" -std=gnu++17 -O2 -o a.out && ./a.out ;; *) echo \"No runner for $n\" ;; esac",
+    "use_new_terminal": false,
+    "allow_concurrent_runs": false,
+    "reveal": "always"
+  }
+]
