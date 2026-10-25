@@ -1,63 +1,54 @@
 {
-  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
-"logo": {
-  "type": "file-raw",
-  "source": "~/.config/fastfetch/goechala-ascii/*.txt",
-  "padding": { "top": 1, "left": 2, "right": 3 }
-},
-"display": {
-    "percent": {
-      "type": 3
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+    "logo": {
+        "type": "file-raw",
+        "source": "~/.config/fastfetch/mountains/*.txt",
+        "padding": { "top": 1, "left": 2, "right": 3 },
     },
-    "bar": {
-      "width": 12,
-      "char": {
-        "elapsed": "■",
-        "total": "·"
-      }
-    }
-  },
-  "modules": [
-    "title",
-    "separator",
-    "os",
-    "host",
-    "kernel",
-    "uptime",
-    "processes",
-    "display",
-    "cpu",
-    "gpu",
-"physicalmemory",
-    {
-  "type": "memory",
-  "format": "   {percentage-bar} {percentage}  {used} / {total}"
-},
-{
-  "type": "swap",
-  "format": "     {percentage-bar} {percentage}  {used} / {total}"
-},
-{
-  "type": "disk",
-  "format": " {size-percentage-bar} {size-percentage}  {size-used} / {size-total}"
-},
+    "display": {
+        "percent": {
+            "type": 3,
+        },
+        "bar": {
+            "width": 12,
+            "char": {
+                "elapsed": "■",
+                "total": "·",
+            },
+        },
+    },
+    "modules": [
+        "title",
+        "separator",
+        "os",
+        "host",
+        "uptime",
+        "cpu",
+        "gpu",
+        "physicalmemory",
+        {
+            "type": "memory",
+            "format": "   {percentage-bar} {percentage}  {used} / {total}",
+        },
+        {
+            "type": "swap",
+            "format": "     {percentage-bar} {percentage}  {used} / {total}",
+        },
+        {
+            "type": "disk",
+            "format": " {size-percentage-bar} {size-percentage}  {size-used} / {size-total}",
+        },
 
-{
-  "type": "cpuusage",
-  "format": "{avg-bar} {avg}"
-},
-{
-  "type": "battery",
-  "format": "{capacity-bar} {capacity}  {status}"
-},
-    "datetime",
-    "weather",
-    {
-  "type": "media",
-  "key": "Now Playing",
-  "format": "{artist} - {title}"
-},
-    "break",
-    "colors"
-  ]
+        {
+            "type": "cpuusage",
+            "format": "{avg-bar} {avg}",
+        },
+        {
+            "type": "battery",
+            "format": "{capacity-bar} {capacity}  {status}",
+        },
+        "datetime",
+        "break",
+        "colors"
+    ],
 }

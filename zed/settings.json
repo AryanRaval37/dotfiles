@@ -7,7 +7,18 @@
 // custom settings, run `zed: open default settings` from the
 // command palette (cmd-shift-p / ctrl-shift-p)
 {
+  // Store extensions reinstalled on a fresh machine (better-comments and my-themes are local, see zed/)
+  "auto_install_extensions": {
+    "catppuccin": true, "git-firefly": true, "github-theme": true,
+    "html": true, "jetbrains-themes": true, "rainbow-csv": true, "toml": true
+  },
 
+  "autosave": "on_focus_change",
+  "languages": {
+    "Rust": {
+      "show_edit_predictions": false
+    }
+  },
   "vertical_scroll_margin": 8,
   "scroll_sensitivity": 1.0,
 
@@ -24,7 +35,7 @@
     "dock": "left"
   },
   "agent": {
-    "default_profile": "ask",
+    "default_profile": "write",
     "default_model": {
       "provider": "zed.dev",
       "model": "gpt-6-luna",
@@ -87,7 +98,7 @@
     "show": "auto"
   },
   "cursor_blink": false,
-  "buffer_font_family": "JetBrainsMono Nerd Font",
+  // "buffer_font_family": "JetBrainsMono Nerd Font",
   "read_only_files": [
     "**/.cargo/registry/src/**/*.rs",
     "**/.cargo/git/checkouts/**/*.rs",
@@ -103,8 +114,8 @@
   "ui_font_size": 16,
   "buffer_font_size": 13.0,
   "theme": {
-    "mode": "dark",
-    "light": "One Light",
-    "dark": "Ayu Mirage",
+    "mode": "system",
+    "light": "Typewriter Light",
+    "dark": "Typewriter Dark",
   },
 }

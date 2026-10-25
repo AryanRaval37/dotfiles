@@ -40,6 +40,7 @@ alias lt="eza --tree --level=2 --icons=auto --group-directories-first"
 alias clear="clear && fastfetch"
 alias top="btop"
 alias lg="lazygit"
+alias mindustry="cd /path/to/mindustry && /opt/homebrew/opt/openjdk@17/bin/java -XstartOnFirstThread -jar Mindustry.jar"
 
 # Smart ls: tree for small folders, horizontal grid for big ones
 unalias ls 2>/dev/null
@@ -113,3 +114,6 @@ eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 fastfetch
+
+if command -v wt >/dev/null 2>&1; then eval "$(command wt config shell init zsh)"; fi
+export PATH="$HOME/Library/TinyTeX/bin/universal-darwin:$PATH"

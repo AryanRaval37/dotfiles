@@ -1,0 +1,7 @@
+id = "my-themes"
+name = "My Themes"
+version = "0.0.1"
+schema_version = 1
+authors = ["Aryan Raval"]
+description = "Typewriter Inspired Themes"
+repository = "file:///path/to/my-themes"
